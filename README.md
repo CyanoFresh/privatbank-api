@@ -30,3 +30,5 @@ $merchant->getBalanceInfo('CARD NUMBER HERE');
 // Get statements for card for last 1 week
 $merchant->getStatements('CARD NUMBER HERE', (new DateTime())->modify('-1 week'), new DateTime());
 ```
+
+Some demo can be found in the `demo/index.php`. But remember, it's only demo.

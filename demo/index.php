@@ -6,8 +6,8 @@
 
 require '../vendor/autoload.php';
 
-$result1 = '';
-$result2 = '';
+$result1 = 'fill credentials';
+$result2 = 'fill credentials';
 
 $id = $_REQUEST['id'];
 $password = $_REQUEST['password'];
