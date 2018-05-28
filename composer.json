@@ -1,12 +1,28 @@
 {
-    "name": "cyanofresh/privatbank-api",
-    "type": "library",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "require": {
-        "guzzlehttp/guzzle": "^6.3"
-    },
-    "autoload": {
-        "psr-4": {"CyanoFresh\\PrivatBankAPI\\": "src/"}
+  "name": "cyanofresh/privatbank-api",
+  "description": "PHP wrapper for PrivatBank API",
+  "keywords": [
+    "privat24",
+    "privatbank",
+    "privatbank api",
+    "php privatbank"
+  ],
+  "authors": [
+    {
+      "name": "Alex Solomaha",
+      "email": "cyanofresh@gmail.com"
     }
+  ],
+  "license": "MIT",
+  "type": "library",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "CyanoFresh\\PrivatBankAPI\\": "src/"
+    }
+  }
 }
