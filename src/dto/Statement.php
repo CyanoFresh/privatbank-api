@@ -98,7 +98,7 @@ class Statement
         
         $result = $this->getElement($response, ['data', 'info', 'statements', 'statement']);
 
-        if (!$result && count($result) < 1) {
+        if (!$result || count($result) < 1) {
             return $statements;
         }
 
