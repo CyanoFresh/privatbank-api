@@ -115,8 +115,6 @@ class Statement
      */
     public static function fromResponse($data)
     {
-        $data = $data['@attributes'];
-
         return new static($data);
     }
 }
