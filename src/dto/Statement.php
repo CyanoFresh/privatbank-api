@@ -74,7 +74,7 @@ class Statement
      * @param array $keys A list of keys to element stored in $data
      * @return null|mixed Returns null if elements is not found. Element's value otherwise.
      */
-    protected function getElement(array $data, array $keys)
+    public static function getElement(array $data, array $keys)
     {
         /** перебираем ключи */
         foreach($keys as $key) {
@@ -96,7 +96,7 @@ class Statement
     {
         $statements = [];
         
-        $result = $this->getElement($response, ['data', 'info', 'statements', 'statement']);
+        $result = self::getElement($response, ['data', 'info', 'statements', 'statement']);
 
         if (!$result || count($result) < 1) {
             return $statements;
