@@ -67,6 +67,27 @@ class Statement
         $this->description = $params['description'];
     }
 
+    
+    /**
+     * Retrieves an element within multidimensional array stored on any level by it's keys.
+     * @param array $data A multidimensional array with data
+     * @param array $keys A list of keys to element stored in $data
+     * @return null|mixed Returns null if elements is not found. Element's value otherwise.
+     */
+    function getElement(array $data, array $keys)
+    {
+        /** перебираем ключи */
+        foreach($keys as $key) {
+            if (is_array($data) && array_key_exists($key, $data)) {
+                $data = $data[$key];
+            } else {
+                return false;
+            }
+        }
+
+        return $data;
+    }
+    
     /**
      * @param $response
      * @return static[]
@@ -74,12 +95,14 @@ class Statement
     public static function arrayFromResponse($response)
     {
         $statements = [];
+        
+        $result = $this->getElement($response, ['data', 'info', 'statements', 'statement']);
 
-        if (!$response['data']['info'] or !$response['data']['info']['statements'] or !$response['data']['info']['statements']['statement'] or count($response['data']['info']['statements']['statement']) < 1) {
+        if (!$result && count($result) < 1) {
             return $statements;
         }
 
-        foreach ($response['data']['info']['statements']['statement'] as $statement) {
+        foreach ($result as $statement) {
             $statements[] = self::fromResponse($statement);
         }
 
