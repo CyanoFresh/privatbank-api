@@ -51,9 +51,11 @@ class Statement
 
     /**
      * Statement constructor.
+     *
      * @param array $params
      */
-    public function __construct($params) {
+    public function __construct($params)
+    {
         $this->card = $params['card'];
         $this->appcode = $params['appcode'];
         $this->date = $params['trandate'];
@@ -73,7 +75,7 @@ class Statement
     {
         $statements = [];
 
-        if (!$response['data']['info']['statements']['statement'] or count($response['data']['info']['statements']['statement']) < 1) {
+        if (!$response['data']['info'] or !$response['data']['info']['statements'] or !$response['data']['info']['statements']['statement'] or count($response['data']['info']['statements']['statement']) < 1) {
             return $statements;
         }
 

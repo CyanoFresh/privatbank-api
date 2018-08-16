@@ -34,6 +34,7 @@ class Merchant
 
     /**
      * Merchant constructor.
+     *
      * @param string|int $id
      * @param string $password
      * @param string $country

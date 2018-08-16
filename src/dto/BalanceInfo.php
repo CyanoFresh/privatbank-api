@@ -21,6 +21,7 @@ class BalanceInfo
 
     /**
      * BalanceInfo constructor.
+     *
      * @param float $balance
      * @param string $currency
      * @param string $date
