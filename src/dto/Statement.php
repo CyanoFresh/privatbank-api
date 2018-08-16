@@ -74,7 +74,7 @@ class Statement
      * @param array $keys A list of keys to element stored in $data
      * @return null|mixed Returns null if elements is not found. Element's value otherwise.
      */
-    function getElement(array $data, array $keys)
+    protected function getElement(array $data, array $keys)
     {
         /** перебираем ключи */
         foreach($keys as $key) {
