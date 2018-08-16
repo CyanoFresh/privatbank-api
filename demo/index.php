@@ -44,8 +44,8 @@ if ($id && $password) {
 
 <h2>balance:</h2>
 
-<pre><?= print_r($result1) ?></pre>
+<pre><?php print_r($result1) ?></pre>
 
 <h2>statements:</h2>
 
-<pre><?= print_r($result2) ?></pre>
+<pre><?php print_r($result2) ?></pre>
